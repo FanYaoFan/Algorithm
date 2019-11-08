@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>冒泡排序</title>
+
+</head>
+
+<body>
+
+</body>
+<script>
+  let ary = [12, 8, 9, 16, 1]
+  // console.log(ary.length) // => 5
+  console.log(ary)
+  for (let i = 0, temp; i < ary.length - 1; i++) {
+    for (let j = i + 1; j < ary.length; j++) {
+      if (ary[i] > ary[j]) {
+        temp = ary[i]
+        ary[i] = ary[j]
+        ary[j] = temp
+      }
+    }
+  }
+  // 这个更好理解
+  function bublle(ary) {
+    let temp = null
+    for (let i = 0; i < ary.length - 1; i++) {
+      for (let j = 0; i < ary.length - i; j++) {
+        if (arr[j] > arr[j + 1]) {
+          temp = ary[j]
+          ary[j] = ary[j + 1]
+          ary[j + 1] = temp
+        }
+      }
+    }
+    return ary
+  }
+  console.log(ary)
+
+</script>
+
+</html>

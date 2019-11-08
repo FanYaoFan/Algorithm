@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>插入排序</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let ary = [12, 8, 9, 16, 1]
+    // function insert(ary) {
+    //     // 1. 准备一个新数组, 用来存储抓到手里的牌, 开始先抓一个牌进来
+    //     let handle = []
+    //     handle.push(ary[0])
+
+    //     // 2 从第二项开始抓牌, 一直把台面(数组)的牌抓光
+    //     for (let i = 1; i < ary.length; i++) {
+    //         // A是新抓的牌
+    //         let A = ary[i]
+    //         // 和handle里(手里的牌依次比较)[从后向前比]
+    //         for (let j = handle.length - 1; j >= 0; j--) {
+    //             // 每一次都要比较手里的牌
+    //             let B = handle[j]
+    //             if (A > B) {
+    //                 handle.splice(j + 1, 0, A)
+    //                 break
+    //             }
+    //             // 已经比到第一项, 我们放在最前即可
+    //             if (j === 0) {
+    //                 handle.unshift(A)
+    //             }
+    //         }
+    //     }
+
+
+
+
+
+    handle = insert(ary)
+    console.log(handle)
+
+    function insert(ary) {
+        //  1  把handle看做手,先抓第一张牌放到手里
+        let handle = []
+        handle.push(ary[0])
+        // 2 依次把台面上的牌抓完 (从第二张开始)
+        for (let i = 1; i < ary.length; i++) {
+            let A = ary[i]
+            // 3 把抓来的每张牌都和手上的牌做比较(从后往前做比较)
+            for (let j = handle.length - 1; j >= 0; j--) {
+                let B = handle[j]
+                if (A > B) {
+                    handle.splice(j + 1, 0, A)
+                    break
+                }
+                // 4 比到第一项了,就直接插在数组最前面
+                if (j === 0) {
+                    handle.unshift(A)
+                }
+            }
+        }
+        return handle
+    }
+    console.log(insert(ary))
+</script>
+
+</html>
